@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportConfiguration>
+  <reportType>Company Annual Report</reportType>
+  <general>
+    <title>Annual Report Configuration</title>
+    <year>2024</year>
+    <companyDetails>
+      <name>Company Name</name>
+      <industry>Industry Type</industry>
+      <location>Headquarters Location</location>
+      <contactInformation>
+        <email>contact@company.com</email>
+        <phone>+1234567890</phone>
+      </contactInformation>
+    </companyDetails>
+  </general>
+
+  <sections>
+    <section id="1">
+      <name>Executive Summary</name>
+      <content>
+        <type>text</type>
+        <maxLength>5000</maxLength>
+        <minLength>1000</minLength>
+        <font>
+          <family>Arial</family>
+          <size>14</size>
+          <color>#000000</color>
+        </font>
+      </content>
+    </section>
+
+    <section id="2">
+      <name>Financial Overview</name>
+      <content>
+        <type>table</type>
+        <columns>
+          <column>
+            <name>Year</name>
+            <dataType>string</dataType>
+            <maxLength>4</maxLength>
+          </column>
+          <column>
+            <name>Revenue</name>
+            <dataType>currency</dataType>
+            <minValue>1000000</minValue>
+            <maxValue>1000000000</maxValue>
+          </column>
+          <column>
+            <name>Profit</name>
+            <dataType>currency</dataType>
+            <minValue>100000</minValue>
+            <maxValue>500000000</maxValue>
+          </column>
+        </columns>
+        <pagination>
+          <pageSize>10</pageSize>
+          <allowMultiplePages>true</allowMultiplePages>
+        </pagination>
+      </content>
+    </section>
+
+    <section id="3">
+      <name>Market Analysis</name>
+      <content>
+        <type>chart</type>
+        <chartType>bar</chartType>
+        <xAxisLabel>Market Segment</xAxisLabel>
+        <yAxisLabel>Market Share</yAxisLabel>
+        <allowedDataTypes>
+          <dataType>percentage</dataType>
+          <dataType>currency</dataType>
+        </allowedDataTypes>
+      </content>
+    </section>
+
+    <section id="4">
+      <name>Risk Factors</name>
+      <content>
+        <type>text</type>
+        <maxLength>3000</maxLength>
+        <minLength>500</minLength>
+        <allowedRiskCategories>
+          <category>Market Risk</category>
+          <category>Operational Risk</category>
+          <category>Regulatory Risk</category>
+        </allowedRiskCategories>
+      </content>
+    </section>
+
+    <section id="5">
+      <name>Corporate Governance</name>
+      <content>
+        <type>text</type>
+        <maxLength>2000</maxLength>
+        <minLength>500</minLength>
+        <font>
+          <family>Times New Roman</family>
+          <size>12</size>
+          <color>#333333</color>
+        </font>
+        <allowedGovernanceMetrics>
+          <metric>Board Composition</metric>
+          <metric>Executive Compensation</metric>
+          <metric>Audit Committee</metric>
+        </allowedGovernanceMetrics>
+      </content>
+    </section>
+
+    <section id="6">
+      <name>Sustainability and CSR</name>
+      <content>
+        <type>text</type>
+        <maxLength>4000</maxLength>
+        <minLength>1000</minLength>
+        <sustainabilityMetrics>
+          <metric>Carbon Footprint</metric>
+          <metric>Water Usage</metric>
+          <metric>Waste Management</metric>
+        </sustainabilityMetrics>
+      </content>
+    </section>
+  </sections>
+
+  <footer>
+    <disclaimer>
+      <text>This report is a confidential document and should not be distributed without proper authorization.</text>
+    </disclaimer>
+    <contactDetails>
+      <email>support@company.com</email>
+      <phone>+1234567890</phone>
+    </contactDetails>
+  </footer>
+
+  <limitations>
+    <dataAccuracy>High</dataAccuracy>
+    <dataSource>External Auditors, Internal Teams</dataSource>
+    <reportingStandard>IFRS</reportingStandard>
+  </limitations>
+</reportConfiguration>
