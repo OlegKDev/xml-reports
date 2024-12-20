@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportConfiguration>
+  <reportType>ESG Report</reportType>
+  <general>
+    <title>ESG Report Configuration</title>
+    <year>2024</year>
+    <companyDetails>
+      <name>Company Name</name>
+      <industry>Industry Type</industry>
+      <location>Headquarters Location</location>
+    </companyDetails>
+  </general>
+
+  <sections>
+    <section id="1">
+      <name>Environmental Impact</name>
+      <content>
+        <type>table</type>
+        <columns>
+          <column>
+            <name>Indicator</name>
+            <dataType>string</dataType>
+            <maxLength>50</maxLength>
+          </column>
+          <column>
+            <name>Value</name>
+            <dataType>numeric</dataType>
+            <minValue>0</minValue>
+            <maxValue>1000000</maxValue>
+          </column>
+          <column>
+            <name>Unit</name>
+            <dataType>string</dataType>
+            <maxLength>20</maxLength>
+          </column>
+        </columns>
+      </content>
+    </section>
+
+    <section id="2">
+      <name>Social Responsibility</name>
+      <content>
+        <type>text</type>
+        <maxLength>3000</maxLength>
+        <minLength>500</minLength>
+        <allowedTopics>
+          <topic>Employee Welfare</topic>
+          <topic>Community Engagement</topic>
+          <topic>Diversity and Inclusion</topic>
+        </allowedTopics>
+      </content>
+    </section>
+
+    <section id="3">
+      <name>Governance</name>
+      <content>
+        <type>text</type>
+        <maxLength>2000</maxLength>
+        <minLength>500</minLength>
+        <governanceMetrics>
+          <metric>Board Diversity</metric>
+          <metric>Ethical Standards</metric>
+          <metric>Anti-corruption Practices</metric>
+        </governanceMetrics>
+      </content>
+    </section>
+
+    <section id="4">
+      <name>Supply Chain Responsibility</name>
+      <content>
+        <type>table</type>
+        <columns>
+          <column>
+            <name>Supplier</name>
+            <dataType>string</dataType>
+            <maxLength>100</maxLength>
+          </column>
+          <column>
+            <name>Compliance</name>
+            <dataType>boolean</dataType>
+          </column>
+        </columns>
+      </content>
+    </section>
+
+    <section id="5">
+      <name>Climate Change Initiatives</name>
+      <content>
+        <type>text</type>
+        <maxLength>4000</maxLength>
+        <minLength>1000</minLength>
+      </content>
+    </section>
+  </sections>
+
+  <footer>
+    <disclaimer>
+      <text>This report is intended for stakeholders and investors.</text>
+    </disclaimer>
+    <contactDetails>
+      <email>esg@company.com</email>
+      <phone>+1234567890</phone>
+    </contactDetails>
+  </footer>
+
+  <limitations>
+    <dataAccuracy>High</dataAccuracy>
+    <reportingStandards>
+      <standard>Global Reporting Initiative (GRI)</standard>
+      <standard>Sustainability Accounting Standards Board (SASB)</standard>
+    </reportingStandards>
+  </limitations>
+</reportConfiguration>
