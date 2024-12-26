@@ -3,7 +3,9 @@
 <!-- Use DTD or XML Schema -->
 <!-- <!DOCTYPE reportConfiguration SYSTEM "esg_report_DTD.dtd"> -->
 
-<reportConfiguration>
+<reportConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://example.com/esgReportSchema esgReportSchema.xsd"
+                     xmlns="http://example.com/esgReportSchema">
   <reportType>ESG Report</reportType>
   <general>
     <title>ESG Report Configuration</title>
