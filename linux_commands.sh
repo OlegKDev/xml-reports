@@ -123,7 +123,3 @@ echo "2. Show current users logged in:      who"
 echo "3. Show last system logins:           last"
 echo "4. Show disk partitions:              sudo fdisk -l"
 echo "5. Show the system hostname:          hostname"
-
-echo "----------------------------------------------------------"
-echo "End of Linux Ubuntu Tech Support Engineer Cheatsheet"
-echo "----------------------------------------------------------"
