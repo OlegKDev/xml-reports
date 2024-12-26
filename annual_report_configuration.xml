@@ -1,72 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reportConfiguration [
-  <!-- Root element -->
-  <!ELEMENT reportConfiguration (reportType, general, sections, footer, limitations)>
 
-  <!-- reportType element -->
-  <!ELEMENT reportType (#PCDATA)>
-
-  <!-- general section -->
-  <!ELEMENT general (title, year, companyDetails)>
-  <!ELEMENT title (#PCDATA)>
-  <!ELEMENT year (#PCDATA)>
-  <!ELEMENT companyDetails (name, industry, location, contactInformation)>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT industry (#PCDATA)>
-  <!ELEMENT location (#PCDATA)>
-  <!ELEMENT contactInformation (email, phone)>
-  <!ELEMENT email (#PCDATA)>
-  <!ELEMENT phone (#PCDATA)>
-
-  <!-- sections element -->
-  <!ELEMENT sections (section+)>
-
-  <!-- section element -->
-  <!ELEMENT section (name, content)>
-  <!ATTLIST section id ID #REQUIRED>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT content (type, (#PCDATA | maxLength | minLength | font | columns | pagination | chartType | xAxisLabel | yAxisLabel | allowedDataTypes | allowedRiskCategories | allowedGovernanceMetrics | sustainabilityMetrics)*)>
-
-  <!-- content-specific elements -->
-  <!ELEMENT type (#PCDATA)>
-  <!ELEMENT maxLength (#PCDATA)>
-  <!ELEMENT minLength (#PCDATA)>
-  <!ELEMENT font (family, size, color)>
-  <!ELEMENT family (#PCDATA)>
-  <!ELEMENT size (#PCDATA)>
-  <!ELEMENT color (#PCDATA)>
-  <!ELEMENT columns (column+)>
-  <!ELEMENT column (name, dataType, maxLength?, minValue?, maxValue?)>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT dataType (#PCDATA)>
-  <!ELEMENT minValue (#PCDATA)>
-  <!ELEMENT maxValue (#PCDATA)>
-  <!ELEMENT pagination (pageSize, allowMultiplePages)>
-  <!ELEMENT pageSize (#PCDATA)>
-  <!ELEMENT allowMultiplePages (#PCDATA)>
-  <!ELEMENT chartType (#PCDATA)>
-  <!ELEMENT xAxisLabel (#PCDATA)>
-  <!ELEMENT yAxisLabel (#PCDATA)>
-  <!ELEMENT allowedDataTypes (dataType+)>
-  <!ELEMENT dataType (#PCDATA)>
-  <!ELEMENT allowedRiskCategories (category+)>
-  <!ELEMENT category (#PCDATA)>
-  <!ELEMENT allowedGovernanceMetrics (metric+)>
-  <!ELEMENT metric (#PCDATA)>
-  <!ELEMENT sustainabilityMetrics (metric+)>
-
-  <!-- footer section -->
-  <!ELEMENT footer (disclaimer, contactDetails)>
-  <!ELEMENT disclaimer (text)>
-  <!ELEMENT text (#PCDATA)>
-  <!ELEMENT contactDetails (email, phone)>
-
-  <!-- limitations section -->
-  <!ELEMENT limitations (dataAccuracy, dataSource, reportingStandard)>
-  <!ELEMENT dataAccuracy (#PCDATA)>
-  <!ELEMENT dataSource (#PCDATA)>
-  <!ELEMENT reportingStandard (#PCDATA)>
-]>
+<!-- Use DTD or XML Schema -->
+<!DOCTYPE reportConfiguration SYSTEM "annual_report_DTD.dtd">
 
 <reportConfiguration>
   <reportType>Company Annual Report</reportType>
