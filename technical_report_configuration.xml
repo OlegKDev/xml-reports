@@ -3,7 +3,9 @@
 <!-- Use DTD or XML Schema -->
 <!-- <!DOCTYPE reportConfiguration SYSTEM "technical_report_DTD.dtd"> -->
 
-<reportConfiguration>
+<reportConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://example.com/technicalReportSchema technicalReportSchema.xsd"
+                     xmlns="http://example.com/technicalReportSchema">
   <reportType>Technical Report</reportType>
   <general>
     <title>Technical Report Configuration</title>
