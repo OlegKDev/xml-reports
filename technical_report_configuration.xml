@@ -1,4 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reportConfiguration [
+  <!ELEMENT reportConfiguration (reportType, general, sections, footer, limitations)>
+  <!ELEMENT reportType (#PCDATA)>
+  <!ELEMENT general (title, version, author)>
+  <!ELEMENT title (#PCDATA)>
+  <!ELEMENT version (#PCDATA)>
+  <!ELEMENT author (name, department, email)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT department (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+
+  <!ELEMENT sections (section+)>
+  <!ELEMENT section (name, content)>
+  <!ATTLIST section id ID #REQUIRED>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT content (type, (#PCDATA | maxLength | minLength | font | allowedMethodologies | columns | allowedAnalysisTypes | allowedFileTypes | maxFileSize)*)>
+  <!ELEMENT type (#PCDATA)>
+
+  <!-- Font for sections with content -->
+  <!ELEMENT font (family, size, color)>
+  <!ELEMENT family (#PCDATA)>
+  <!ELEMENT size (#PCDATA)>
+  <!ELEMENT color (#PCDATA)>
+
+  <!-- Methodologies allowed for Methodology section -->
+  <!ELEMENT allowedMethodologies (methodology+)>
+  <!ELEMENT methodology (#PCDATA)>
+
+  <!-- Analysis types for Analysis section -->
+  <!ELEMENT allowedAnalysisTypes (type+)>
+  <!ELEMENT type (#PCDATA)>
+
+  <!-- Table columns for Results section -->
+  <!ELEMENT columns (column+)>
+  <!ELEMENT column (name, dataType, (maxLength | minValue | maxValue)?)>
+  <!ELEMENT name (#PCDATA)>
+  <!ELEMENT dataType (#PCDATA)>
+  <!ELEMENT maxLength (#PCDATA)>
+  <!ELEMENT minValue (#PCDATA)>
+  <!ELEMENT maxValue (#PCDATA)>
+
+  <!-- Allowed file types for Appendices section -->
+  <!ELEMENT allowedFileTypes (fileType+)>
+  <!ELEMENT fileType (#PCDATA)>
+
+  <!-- Footer and acknowledgments -->
+  <!ELEMENT footer (acknowledgments, contactDetails)>
+  <!ELEMENT acknowledgments (text)>
+  <!ELEMENT text (#PCDATA)>
+  <!ELEMENT contactDetails (email, phone)>
+  <!ELEMENT phone (#PCDATA)>
+
+  <!-- Limitations section -->
+  <!ELEMENT limitations (dataAccuracy, methodologyLimitations)>
+  <!ELEMENT dataAccuracy (#PCDATA)>
+  <!ELEMENT methodologyLimitations (limitation+)>
+  <!ELEMENT limitation (#PCDATA)>
+]>
+
 <reportConfiguration>
   <reportType>Technical Report</reportType>
   <general>
