@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE reportConfiguration [
-  <!ELEMENT reportConfiguration (reportType, general, sections, footer, limitations)>
-  <!ELEMENT reportType (#PCDATA)>
-  <!ELEMENT general (title, year, companyDetails)>
-  <!ELEMENT title (#PCDATA)>
-  <!ELEMENT year (#PCDATA)>
-  <!ELEMENT companyDetails (name, industry, location)>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT industry (#PCDATA)>
-  <!ELEMENT location (#PCDATA)>
-  
-  <!ELEMENT sections (section+)>
-  <!ELEMENT section (name, content)>
-  <!ATTLIST section id ID #REQUIRED>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT content (type, (#PCDATA | columns | maxLength | minLength | allowedTopics | governanceMetrics)*)>
-  <!ELEMENT type (#PCDATA)>
-  <!ELEMENT columns (column+)>
-  <!ELEMENT column (name, dataType, (maxLength | minValue | maxValue)?)>
-  <!ELEMENT name (#PCDATA)>
-  <!ELEMENT dataType (#PCDATA)>
-  <!ELEMENT maxLength (#PCDATA)>
-  <!ELEMENT minValue (#PCDATA)>
-  <!ELEMENT maxValue (#PCDATA)>
-  <!ELEMENT allowedTopics (topic+)>
-  <!ELEMENT topic (#PCDATA)>
-  <!ELEMENT governanceMetrics (metric+)>
-  <!ELEMENT metric (#PCDATA)>
-  
-  <!ELEMENT footer (disclaimer, contactDetails)>
-  <!ELEMENT disclaimer (text)>
-  <!ELEMENT text (#PCDATA)>
-  <!ELEMENT contactDetails (email, phone)>
-  <!ELEMENT email (#PCDATA)>
-  <!ELEMENT phone (#PCDATA)>
-  
-  <!ELEMENT limitations (dataAccuracy, reportingStandards)>
-  <!ELEMENT dataAccuracy (#PCDATA)>
-  <!ELEMENT reportingStandards (standard+)>
-  <!ELEMENT standard (#PCDATA)>
-]>
+
+<!-- Use DTD or XML Schema -->
+<!-- <!DOCTYPE reportConfiguration SYSTEM "esg_report_DTD.dtd"> -->
 
 <reportConfiguration>
   <reportType>ESG Report</reportType>
