@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/esgReportSchema"
+           xmlns="http://example.com/esgReportSchema"
+           elementFormDefault="qualified">
+
+  <!-- Define the reportConfiguration element -->
+  <xs:element name="reportConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- reportType element -->
+        <xs:element name="reportType" type="xs:string"/>
+        
+        <!-- general section -->
+        <xs:element name="general">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title" type="xs:string"/>
+              <xs:element name="year" type="xs:int"/>
+              <xs:element name="companyDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="industry" type="xs:string"/>
+                    <xs:element name="location" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- sections element -->
+        <xs:element name="sections">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="section" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="content">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="type" type="xs:string"/>
+                          <xs:element name="columns">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="column" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name" type="xs:string"/>
+                                      <xs:element name="dataType" type="xs:string"/>
+                                      <xs:element name="maxLength" minOccurs="0" type="xs:int"/>
+                                      <xs:element name="minValue" minOccurs="0" type="xs:int"/>
+                                      <xs:element name="maxValue" minOccurs="0" type="xs:int"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="maxLength" minOccurs="0" type="xs:int"/>
+                          <xs:element name="minLength" minOccurs="0" type="xs:int"/>
+                          <xs:element name="allowedTopics" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="topic" maxOccurs="unbounded" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="governanceMetrics" minOccurs="0">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="metric" maxOccurs="unbounded" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- footer section -->
+        <xs:element name="footer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="disclaimer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="text" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="contactDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="email" type="xs:string"/>
+                    <xs:element name="phone" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <!-- limitations section -->
+        <xs:element name="limitations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dataAccuracy" type="xs:string"/>
+              <xs:element name="reportingStandards">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="standard" maxOccurs="unbounded" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
