@@ -1,0 +1,47 @@
+trigger:
+  branches:
+    include:
+      - main  # or any branch you want to monitor
+  paths:
+    include:
+      - '**/*.xml'  # This will trigger on any change to XML files in the repository
+
+pr:
+  branches:
+    include:
+      - main  # Or the branch to monitor for PRs
+
+pool:
+  vmImage: 'ubuntu-latest'  # Or use another image as required
+
+jobs:
+  - job: ReportProduction
+    displayName: 'Trigger Report Production'
+    steps:
+    
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          buildType: 'current'
+          downloadType: 'specific'
+          artifactName: 'drop'  # The name of the build artifact, if applicable
+          targetPath: '$(Build.ArtifactStagingDirectory)'  # Path to download the artifact
+
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(Build.SourcesDirectory)'  # Directory of the repository
+          Contents: '**/*.xml'  # Specify the XML configuration files
+          TargetFolder: '$(Build.ArtifactStagingDirectory)/config'  # Path to copy the XML config files
+
+      - script: |
+          echo "Triggering report production based on XML config files."
+          # Add your custom script to start the report generation process
+          # For example, run a script or call a service to generate reports from the XML files
+          ./generate_reports_from_xml.sh  # This should be your custom script
+        displayName: 'Generate Reports'
+
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'  # Path to publish artifacts
+          ArtifactName: 'reports'  # The name of the artifact containing generated reports
+          publishLocation: 'Container'
+        
