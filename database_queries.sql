@@ -39,3 +39,20 @@ WHERE config_name = 'AnnualReportConfig';
 SELECT EXTRACTVALUE(config_data, '/reportConfiguration/reportType') AS report_type
 FROM xml_configurations
 WHERE config_name = 'AnnualReportConfig';
+
+-- Update a Value in the XML
+-- SQL Server
+UPDATE xml_configurations
+SET config_data.modify('replace value of (/reportConfiguration/reportType/text())[1] with "Updated Report Type"')
+WHERE config_name = 'AnnualReportConfig';
+
+-- PostgreSQL
+UPDATE xml_configurations
+SET config_data = xmlparse(content xmltransform(config_data, '/reportConfiguration/reportType', 'Updated Report Type'))
+WHERE config_name = 'AnnualReportConfig';
+
+-- Oracle
+UPDATE xml_configurations
+SET config_data = updatexml(config_data, '/reportConfiguration/reportType', 'Updated Report Type')
+WHERE config_name = 'AnnualReportConfig';
+
