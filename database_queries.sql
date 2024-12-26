@@ -56,3 +56,6 @@ UPDATE xml_configurations
 SET config_data = updatexml(config_data, '/reportConfiguration/reportType', 'Updated Report Type')
 WHERE config_name = 'AnnualReportConfig';
 
+-- Delete a Configuration
+DELETE FROM xml_configurations
+WHERE id = 1;
